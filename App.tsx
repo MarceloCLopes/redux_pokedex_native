@@ -1,17 +1,20 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { Provider } from 'react-redux';
 import { store } from './src/app/store';
-import { ButtonRedux } from './src/components/ButtonRedux';
-import { Counter } from './src/components/Counter';
+import { PokemonList } from './src/components/PokemonList';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <SafeAreaView>
-        <Counter />
-        <ButtonRedux />
-      </SafeAreaView>
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor='transparent'
+        translucent
+      />
+      <View>
+        <PokemonList />
+      </View>
     </Provider>
   );
 };
